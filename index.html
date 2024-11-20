@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tareas</title>
+    <link href="css2.css?family=Lato:wght@100;400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" type="text/javascript" defer></script>
+</head>
+<style>
+    #resultado {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    .exito {
+      color: green;
+    }
+    .fracaso {
+      color: red;
+    }
+    .trash-btn,
+    .complete-btn {
+  background: none;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+.trash-btn:hover {
+  color: rgb(255, 72, 72);
+}
+  </style>
+
+<body onload="cargadatos()">
+    <div class="list roundBorder">
+        <div class="date">
+            <div class="dateRight">
+                <div id="dateNumber"></div>
+                <div>
+                    <div id="dateMonth"></div>
+                    <div id="dateYear"></div>
+                </div>
+            </div>
+            <div id="dateText"></div>
+        </div>
+
+
+        <form onsubmit="addNewTask(event)">
+            <input type="text" id="taskText" name="taskText" autocomplete="off" placeholder="Nueva tarea" class="roundBorder">
+            
+            <select id="usuarios" id="usuario" name="usuario" class="roundBorder"></select>  
+            <button type="submit" class="addTaskButton">+ Agregar</button>
+            <button type="button" class="orderButton roundBorder" onclick="OrderTasks()">Ordenar</button>
+            <label><small>* ordena de Task no realizadas a las ya hechas, para señalar Task realizada de Click</small></label>
+        </form>
+        <div id="tasksContainer"></div>
+        <div id="resultado"></div>
+    </div>
+</body>
+
+</html>
